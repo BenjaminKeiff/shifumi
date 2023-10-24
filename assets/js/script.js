@@ -1,7 +1,8 @@
 const ciseauxBtn = document.querySelector('#ciseaux-btn');
 const pierreBtn = document.querySelector('#pierre-btn');
 const feuilleBtn = document.querySelector('#feuille-btn');
-const image = document.querySelector('#player-choice')
+const image = document.querySelector('#Pimg');
+const computerImg=document.querySelector('#Cimg');
 let choice = "";
 let computerArray = ["pierre", "feuille", "ciseau"];
 let playerScore = 0;
@@ -59,7 +60,13 @@ function startGame() {
 
 
     computerChoice = randomComputerChoice();
-
+    if(computerChoice==="ciseaux"){
+        computerImg="ciseaux.png";
+    }else if(computerChoice==="pierre"){
+        computerImg="pierre.png";
+    }else if(computerChoice==="feuille"){
+        computerImg="feuille.png";
+    }
     // ____________________________________________________________
     // ________________Condition de victoire_______________________
     // ____________________________________________________________
