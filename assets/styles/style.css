@@ -1,0 +1,9 @@
+*{
+    --background-color: #e4e4e4;
+    --color-text: #000;
+}
+
+body{
+    background-color: --background-color;
+    color: --color-text;
+}
