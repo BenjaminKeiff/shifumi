@@ -4,7 +4,9 @@ const feuilleBtn = document.querySelector('#feuille-btn');
 const image = document.querySelector('#player-choice')
 let choice = "";
 let computerArray = ["pierre", "feuille", "ciseau"];
-
+let playerScore = 0;
+let computerScore = 0;
+let computerChoice;
     // ____________________________________________________________
     // _______________________choix du joueur______________________
     // ____________________________________________________________
@@ -13,19 +15,19 @@ let computerArray = ["pierre", "feuille", "ciseau"];
 pierreBtn.addEventListener('click', () => {
     choice = "pierre";
     image.src = "pierre";
-    // startGame;
+    startGame;
 });
 
 ciseauxBtn.addEventListener('click', () => {
     choice = "ciseaux";
     image.src = "ciseaux";
-    // startGame;
+    startGame;
 });
 
 feuilleBtn.addEventListener('click', () => {
     choice = "ciseaux";
     image.src = "ciseaux";
-    // startGame;
+    startGame;
 });
 
 function startGame() {
@@ -59,9 +61,28 @@ function startGame() {
     computerChoice = randomComputerChoice();
 
     // ____________________________________________________________
-    // ____________________________________________________________
+    // ________________Condition de victoire_______________________
     // ____________________________________________________________
 
+    if(choice==="pierre"){
+        if(computerChoice==="ciseaux"){
+            playerScore+=1;
+        }else if(computerChoice==="papier"){
+            computerScore+=1;
+        }
+    }else if(choice==="papier"){
+        if(computerChoice==="pierre"){
+            playerScore+=1;
+        }else if(computerChoice==="ciseaux"){
+            computerScore+=1;
+        }
+    }else if(choice==="ciseaux"){
+        if(computerChoice==="feuille"){
+            playerScore+=1;
+        }else if(computerChoice==="pierre"){
+            computerScore+=1;
+        }
+    }
 }
 
 function randomComputerChoice() {
