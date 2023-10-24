@@ -4,7 +4,7 @@ const feuilleBtn = document.querySelector('#feuille');
 const image = document.querySelector('#Pimg');
 const computerImg = document.querySelector('#Cimg');
 let choice = "";
-let computerArray = ["pierre", "feuille", "ciseau"];
+let computerArray = ["pierre", "feuille", "ciseaux"];
 let playerScoreDisplay = document.querySelector('#Pscore');
 let computerScoreDisplay = document.querySelector('#Cscore');
 let playerScore = 0;
@@ -19,20 +19,20 @@ const replayBtn = document.querySelector('#reset');
 
 pierreBtn.addEventListener('click', () => {
     choice = "pierre";
-    image.src = "pierre.png";
-    startGame;
+    image.src = "./assets/images/pierre.jpg";
+    startGame();
 });
 
 ciseauxBtn.addEventListener('click', () => {
     choice = "ciseaux";
-    image.src = "ciseaux.png";
-    startGame;
+    image.src = "./assets/images/ciseaux.jpg";
+    startGame();
 });
 
 feuilleBtn.addEventListener('click', () => {
-    choice = "ciseaux";
-    image.src = "ciseaux.png";
-    startGame;
+    choice = "feuille";
+    image.src = "./assets/images/feuille.jpg";
+    startGame();
 });
 
 function startGame() {
@@ -41,13 +41,13 @@ function startGame() {
     // ____________________________________________________________
 
 
-    computerChoice = randomComputerChoice();
+    computerChoice = randomComputerChoice(computerArray);
     if (computerChoice === "ciseaux") {
-        computerImg.src = "ciseaux.png";
+        computerImg.src = "./assets/images/ciseaux.jpg";
     } else if (computerChoice === "pierre") {
-        computerImg.src = "pierre.png";
+        computerImg.src = "./assets/images/pierre.jpg";
     } else if (computerChoice === "feuille") {
-        computerImg.src = "feuille.png";
+        computerImg.src = "./assets/images/feuille.jpg";
     }
     // ____________________________________________________________
     // ________________Condition de victoire_______________________
@@ -56,44 +56,45 @@ function startGame() {
     if (choice === "pierre") {
         if (computerChoice === "ciseaux") {
             playerScore += 1;
-            updateScore();
-        } else if (computerChoice === "papier") {
-            computerScore += 1;
-            updateScore();
         }
-    } else if (choice === "papier") {
+        if (computerChoice === "feuille") {
+            computerScore += 1;
+        }
+    } else if (choice === "feuille") {
         if (computerChoice === "pierre") {
             playerScore += 1;
-            updateScore();
-        } else if (computerChoice === "ciseaux") {
+        }
+        if (computerChoice === "ciseaux") {
             computerScore += 1;
-            updateScore();
         }
     } else if (choice === "ciseaux") {
         if (computerChoice === "feuille") {
             playerScore += 1;
-            updateScore();
-        } else if (computerChoice === "pierre") {
+        }
+        if (computerChoice === "pierre") {
             computerScore += 1;
-            updateScore();
         }
     }
+    updateScore();
+    console.log(playerScore);
+    console.log(computerScore);
 }
 
 replayBtn.addEventListener('click', () => {
     playerScore = 0;
     computerScore = 0;
-    image = "";
-    computerImg = "";
+    image.src = "";
+    computerImg.src = "";
+    updateScore();
 });
 
 function updateScore() {
-    playerScoreDisplay = playerScore;
-    computerScoreDisplay = computerScore;
+    playerScoreDisplay.innerText = playerScore;
+    computerScoreDisplay.innerText = computerScore;
 }
 
-function randomComputerChoice() {
-    computer[(Math.floor(Math.random() * computer.length))];
+function randomComputerChoice(computer) {
+    return computer[(Math.floor(Math.random() * computer.length))];
 }
 
 function soundgame() {
