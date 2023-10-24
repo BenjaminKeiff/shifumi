@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="BenjaminKeiff">
+    <meta name="creator" content="BenjaminKeiff misterthii PierreVerschaffel">
+    <meta name="description" content="Jeu du Shifumi pour le projet GIT - gestion de projet">
+    <meta name="keywords" content="Shifumi, pierre, feuille, ciseaux">
+    <meta name="referrer" content="origin">
+    <meta name="color-scheme" content="light dark">
+    <meta name="googlebots" content="Googlebot">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>Shifumi</title>
+</head>
+<body>
+    <audio id="myAudio" loop>
+        <source src="./assets/music/musique.ogg" type="audio/ogg">
+        ton navigateur ne lis pas les audios sorry
+    </audio>
+    <div id="options">
+        <img id="play" src="./assets/images/play.png" alt="bouton play">
+        <img id="pause" src="./assets/images/pause.png" alt="bouton pause"> 
+        <img id="dark" src="./assets/images/croissant-de-lune.png" alt="bouton ecran sombre">
+        <img id="light" src="./assets/images/soleil.png" alt="bouton écran clair">
+    </div>
+    <div id="container">
+        
+        <h1 id="title">
+            Pierre feuille ciseaux
+        </h1>
+        
+        <div id="container_images">
+            <img src="" alt="" id="Pimg">
+            <img src="./assets/images/vs.png" alt="vs">
+            <img src="" alt="" id="Cimg">
+        </div>
+        <div id="container_buttons">
+            <img id="pierre" src="./assets/images/pierre.jpg" alt="pierre">
+            <img id="feuille" src="./assets/images/feuille.jpg" alt="pierre">
+            <img id="ciseaux" src="./assets/images/ciseaux.jpg" alt="pierre">
+            
+        </div>
+        <div id="container_header">
+            <p>Joueur =  <span id="Pscore">0</span></p>
+            
+            <p>Ordinateur = <span id="Cscore">0</span></p>
+        </div>
+        <div id="button">
+            <img id="reset" src="./assets/images/reset.png">
+        </div>
+    </div>
+ <script src="./assets/js/script.js"></script> 
+</body>
+</html>
