@@ -10,6 +10,8 @@ let computerScoreDisplay=document.querySelector('#Cscore');
 let playerScore = 0;
 let computerScore = 0;
 let computerChoice;
+const replayBtn = document.querySelector('#reset');
+
     // ____________________________________________________________
     // _______________________choix du joueur______________________
     // ____________________________________________________________
@@ -76,8 +78,14 @@ function startGame() {
             updateScore();
         }
     }
-
 }
+
+replayBtn.addEventListener('click',()=>{
+    playerScore=0;
+    computerScore=0;
+    image="";
+    computerImg="";
+});
 
 function updateScore(){
     playerScoreDisplay=playerScore;
